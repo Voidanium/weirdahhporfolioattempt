@@ -1,0 +1,84 @@
+/* GENERAL */
+body {
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  overflow: hidden; /* contain the canvas */
+}
+
+#header-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind the header text */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Ensure it's on top of the canvas */
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #aaa;
+}
+
+/* MAIN CONTENT */
+main {
+  position: relative;
+  z-index: 1;
+  padding: 100vh 2rem 2rem; /* Start content after full viewport height */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  /* These sections are now invisible, but still create scroll height */
+  height: 100vh; /* Make each section tall enough to scroll past */
+  margin-bottom: 2rem;
+}
